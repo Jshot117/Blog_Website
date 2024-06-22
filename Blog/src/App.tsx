@@ -1,17 +1,21 @@
 import './App.css'
-import BlogHeader from './components/BlogHeader'
-import BlogCard from './components/BlogCard'
+import { BrowserRouter as Router, Routes } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import { Route } from 'react-router-dom'
+import BlogPost from './components/BlogPosts'
 
 function App() {
 
   return (
     <>
-      <BlogHeader title={'Jonnathans Blog'} links={[{ "name": "Instagram", "url": "https://www.instagram.com/jonn_ig/" },
-      { "name": "linkedIn", "url": "https://www.linkedin.com/in/jonnathan-saavedra/" },
-      { "name": "Personal Portfolio", "url": "https://jshot117.github.io/Portfolio_Website/" }]} />
-      <BlogCard title = {"My First Blog Post"} link = {{"name": "Read More", "url": "https://jshot117.github.io/Portfolio_Website/"}} description = {"This is my first blog post. I am excited to share my thoughts with you."} />
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/home/:postId" element={<BlogPost />} />
+      </Routes>
+    </Router>
     </>
   )
 }
 
-export default App
+export default App;
