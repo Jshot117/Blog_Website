@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from "../assets/image_logo.png";
 
 // Define the type for the props
 interface BlogHeaderProps {
@@ -9,13 +10,13 @@ interface BlogHeaderProps {
 // BlogHeader component
 const BlogHeader: React.FC<BlogHeaderProps> = ({ title, links }) => {
     return (
-        <header className="bg-cyan-900 flex-col text-center p-2">
-            <div className="container mx-auto flex flex-col md:flex-row md:pr-10 md:pl-10 justify-between items-center">
+        <header className="bg-black flex-col text-center p-2">
+            <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
                 <div className="flex items-center">
                     <img
-                        src="https://via.placeholder.com/40"
+                        src={logo}
                         alt="Logo"
-                        className="mr-4"
+                        className="mr-4 size-20 border"
                     />
                     <h1 className="text-white font-bold text-3xl">
                         <a href={"/"}>{title}</a>
