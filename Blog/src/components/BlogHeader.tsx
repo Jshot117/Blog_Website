@@ -10,7 +10,7 @@ interface BlogHeaderProps {
 // BlogHeader component
 const BlogHeader: React.FC<BlogHeaderProps> = ({ title, links }) => {
     return (
-        <header className="bg-black flex-col text-center p-2">
+        <header className="bg-gradient-to-r from-black to-gray-800 flex-col text-center p-2">
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
                 <div className="flex items-center">
                     <img
