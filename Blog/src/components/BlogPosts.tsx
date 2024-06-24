@@ -1,16 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import BlogHeader from './BlogHeader';
+import MyFirstBlog from '../assets/blogContent/MyFirstBlog.json';
 
 const blogPosts = {
-    FirstBlog: {
-        title: "My First Blog Post",
-        content: "this is a test content for my first blog post but ideally it is going to be very large so i will probably need to use a text file to store it and bring it in"
-    },
-    SecondBlog: {
-        title: "My Second Blog Post",
-        content: "this is a second test content for my second blog post but ideally it is going to be very large so i will probably need to use a text file to store it and bring it in"
-    },
+    FirstBlog: MyFirstBlog
 }
 
 const BlogPost: React.FC = () => {
