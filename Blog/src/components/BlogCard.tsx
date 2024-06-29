@@ -4,19 +4,22 @@ interface BlogCardProps {
     title: string;
     link: { name: string, url: string };
     description: string;
+    date: string;
 }
 
-const BlogCard: React.FC<BlogCardProps> = ({ title, link, description }) => {
+const BlogCard: React.FC<BlogCardProps> = ({ title, link, description, date }) => {
     return (
-        <div className="mr-5 ml-5 lg:mr-96 lg:ml-96 md:mr-48 md:ml-48 mb-10 mt-10 border-4 border-black bg-gray-50">
-            <div className="flex-col text-center mb-5 mt-5">
-                <h2 className="text-center md:ml-1 md:text-left font-bold">{title}</h2>
-                <p>{description}</p>
-                <div className="text-blue-900">
-                    <a href={link.url}>{link.name}</a>
-                </div>
+        <div className="bg-gray-200 m-10 border-4 rounded-lg shadow-lg p-8  max-w-4xl mx-auto min-h-72 flex flex-col justify-between" style={{ width: "70vw" }}>
+            <div className="flex-grow">
+                <h2 className="font-bold text-2xl mb-2">{title}</h2>
+                <h3 className="text-lg mb-4">{date}</h3>
+                <p className="text-gray-700">{description}</p>
+            </div>
+            <div className="text-blue-900 mt-4">
+                <a href={link.url} className="hover:underline text-lg">{link.name}</a>
             </div>
         </div>
-    )
+    );
 }
+
 export default BlogCard;
