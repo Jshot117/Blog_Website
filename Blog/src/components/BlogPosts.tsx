@@ -26,18 +26,22 @@ const BlogPost: React.FC = () => {
                     { "name": "Personal Portfolio", "url": "https://jshot117.github.io/Portfolio_Website/" }]} />
                 <div className="bg-gray-200 m-10 border-4 rounded-lg shadow-lg p-8  max-w-4xl mx-auto min-h-72 flex flex-col justify-between" style={{ width: "70vw" }}>
                     <article className="prose">
-                        <ReactMarkdown children={markdown}
+                        <ReactMarkdown children={markdown} className=""
                             components={{
+                                pre: "div",  //THIS is needed because prose styles pre tags but not divs
                                 code({ node, className, children, ...props }) {
                                     const match = /language-(\w+)/.exec(className || '');
+                                    console.log(children)
                                     return match ? (
-                                        <SyntaxHighlighter
-                                            children={String(children).replace(/\n$/, '')}
-                                            style={materialDark}
-                                            language={match[1]}
-                                            PreTag="div"
-                                            {...props}
-                                        />
+                                        <div className="not-prose"> {/*This gets rid of backtick ?? still unknown why*/}
+                                            <SyntaxHighlighter
+                                                children={String(children).replace(/\n$/, '')}
+                                                style={materialDark}
+                                                language={match[1]}
+                                                PreTag="div"
+                                                {...props}
+                                            />
+                                        </div>
                                     ) : (
                                         <code className={className} {...props}>
                                             {children}
