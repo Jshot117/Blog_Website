@@ -10,7 +10,7 @@ interface BlogHeaderProps {
 // BlogHeader component
 const BlogHeader: React.FC<BlogHeaderProps> = ({ title, links }) => {
     return (
-        <header className="bg-gradient-to-r from-black to-gray-800 flex-col text-center p-2">
+        <header className="bg-gradient-to-b from-black to-transparent flex-col text-center p-2 ">
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
                 <div className="flex items-center">
                     <img
@@ -18,15 +18,15 @@ const BlogHeader: React.FC<BlogHeaderProps> = ({ title, links }) => {
                         alt="Logo"
                         className="mr-4 size-20 border"
                     />
-                    <h1 className="text-white font-bold text-3xl">
+                    <h1 className="text-gray-200 font-bold text-3xl">
                         <a href={"/"}>{title}</a>
                     </h1>
                 </div>
                 <nav>
                     <ul className="list-none p-0 flex justify-center gap-4">
                         {links.map((link, index) => (
-                            <li key={index} className="m-0 text-white text-l hover:scale-110 transform duration-200">
-                                <a href={link.url} >
+                            <li key={index} className="m-0 text-gray-200 text-l hover:scale-110 transform duration-200">
+                                <a href={link.url} target="_blank" >
                                     {link.name}
                                 </a>
                             </li>
