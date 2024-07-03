@@ -11,7 +11,7 @@ const BlogPost: React.FC = () => {
     const { postId } = useParams<{ postId: string }>();
     const [markdown, setMarkdown] = useState("");
 
-    import(`/public/blogContent/${postId}.md`).then(res => {
+    import(`/blogContent/${postId}.md`).then(res => {
         fetch(res.default)
             .then(res => res.text())
             .then(text => setMarkdown(text))
@@ -25,7 +25,7 @@ const BlogPost: React.FC = () => {
                     { "name": "linkedIn", "url": "https://www.linkedin.com/in/jonnathan-saavedra/" },
                     { "name": "Personal Portfolio", "url": "https://jshot117.github.io/Portfolio_Website/" }]} />
                 <div className="bg-gray-200 m-10 border-4 rounded-lg shadow-lg p-8  max-w-4xl mx-auto min-h-72 flex flex-col justify-between" style={{ width: "70vw" }}>
-                    <article className="prose">
+                    <article className="prose max-w-none prose-hr:border-black prose-pink">
                         <ReactMarkdown children={markdown} className=""
                             components={{
                                 pre: "div",  //THIS is needed because prose styles pre tags but not divs
