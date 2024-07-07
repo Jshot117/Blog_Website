@@ -18,7 +18,7 @@ const BlogHeader: React.FC<BlogHeaderProps> = ({ title, links }) => {
                         alt="Logo"
                         className="mr-4 size-20 border"
                     />
-                    <h1 className="text-gray-200 font-bold text-3xl hover: transform duration-200 ">
+                    <h1 className="text-gray-200 font-bold text-3xl hover:scale-105 transform duration-200 ">
                         <a href={"/"}>{title}</a>
                     </h1>
                 </div>
