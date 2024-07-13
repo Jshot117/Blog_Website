@@ -9,12 +9,14 @@ function App() {
 
   return (
     <>
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/MyFirstBlog" element={<BlogPost postId="MyFirstBlog" />} />
-      </Routes>
-    </Router>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+        <Routes>
+          <Route path="/MyFirstBlog" element={<BlogPost postId="MyFirstBlog" />} />
+        </Routes>
+      </Router>
     </>
   )
 }
