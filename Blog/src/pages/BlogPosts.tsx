@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import BlogHeader from './BlogHeader';
+import BlogHeader from '../components/BlogHeader';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -11,11 +11,10 @@ const BlogPost: React.FC = () => {
     const { postId } = useParams<{ postId: string }>();
     const [markdown, setMarkdown] = useState("");
 
-    import(`/blogContent/${postId}.md`).then(res => {
-        fetch(res.default)
-            .then(res => res.text())
-            .then(text => setMarkdown(text))
-    })
+    fetch(`/blogContent/${postId}.md`)
+        .then(res => res.text())
+        .then(text => setMarkdown(text))
+
     return (
         <div>
             <div className="absolute top-0 z-[-2] min-h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">

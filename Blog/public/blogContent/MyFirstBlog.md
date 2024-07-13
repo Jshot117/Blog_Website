@@ -28,4 +28,4 @@ Let's write a simple JavaScript program to get started. Open your code editor an
 ```javascript
 console.log('Hello, JavaScript!');
 ```
-![final result](/Example_result.png)
+![final result](/photos/Example_Result.png)
