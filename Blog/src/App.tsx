@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage'
 import { Route } from 'react-router-dom'
 import BlogPost from './pages/BlogPosts'
 
+
 function App() {
 
   return (
@@ -11,7 +12,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/home/:postId" element={<BlogPost />} />
+        <Route path="/home/MyFirstBlog" element={<BlogPost postId="MyFirstBlog" />} />
       </Routes>
     </Router>
     </>

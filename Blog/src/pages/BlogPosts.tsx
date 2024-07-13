@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import BlogHeader from '../components/BlogHeader';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -7,8 +7,8 @@ import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
 
-const BlogPost: React.FC = () => {
-    const { postId } = useParams<{ postId: string }>();
+const BlogPost: React.FC<{postId:string}> = ({postId}) => {
+    // const { postId } = useParams<{ postId: string }>();
     const [markdown, setMarkdown] = useState("");
 
     fetch(`/blogContent/${postId}.md`)
