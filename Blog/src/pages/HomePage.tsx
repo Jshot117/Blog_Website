@@ -18,7 +18,7 @@ const HomePage: React.FC = () => {
     },
     {
         title: "My First Blog Post",
-        link: { name: "Read More", url: "/home/MyFirstBlog" },
+        link: { name: "Read More", url: "/MyFirstBlog" },
         description: "My first blog post I want to be my an introduction to myself and my expereince creating my blog. ",
         date: "6/23/2024"
     },
