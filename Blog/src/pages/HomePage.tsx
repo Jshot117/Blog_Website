@@ -3,26 +3,13 @@ import BlogCard from '../components/BlogCard'
 import BlogHeader from '../components/BlogHeader'
 
 const HomePage: React.FC = () => {
-    const blogs = [{
-        title: "My Third Blog Post",
-        link: { name: "Read More", url: "/home/ThirdBlog" },
-        description: "This is the content of my third blog post. I am excited to share my thoughts with you.",
-        date: "6/25/2024"
-    },
-
-    {
-        title: "My Second Blog Post",
-        link: { name: "Read More", url: "/home/SecondBlog" },
-        description: "This is the content of my second blog post. I am excited to share my thoughts with you.",
-        date: "6/24/2024"
-    },
+    const blogs = [
     {
         title: "My First Blog Post",
         link: { name: "Read More", url: "/MyFirstBlog" },
         description: "My first blog post I want to be my an introduction to myself and my expereince creating my blog. ",
         date: "6/23/2024"
     },
-
     ]
 
     return (
