@@ -23,7 +23,7 @@ const BlogPost: React.FC = () => {
                     links={[
                         { "name": "linkedIn", "url": "https://www.linkedin.com/in/jonnathan-saavedra/" },
                         { "name": "Personal Portfolio", "url": "https://jshot117.github.io/Portfolio_Website/" }]} />
-                <div className="bg-gray-200 m-10 border-4 rounded-lg shadow-lg p-8  max-w-4xl mx-auto min-h-72 flex flex-col justify-between" style={{ width: "90vw" }}>
+                <div className="bg-gray-200 m-10 border-4 rounded-lg shadow-lg p-8  max-w-4xl mx-auto min-h-72 flex flex-col justify-between" style={{ width: "95vw" }}>
                     <article className="prose max-w-none prose-hr:border-black prose-pink">
                         <ReactMarkdown children={markdown} className=""
                             components={{
