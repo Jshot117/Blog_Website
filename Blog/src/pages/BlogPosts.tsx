@@ -30,7 +30,6 @@ const BlogPost: React.FC = () => {
                                 pre: "div",  //THIS is needed because prose styles pre tags but not divs
                                 code({ node, className, children, ...props }) {
                                     const match = /language-(\w+)/.exec(className || '');
-                                    console.log(children)
                                     return match ? (
                                         <div className="not-prose"> {/*This gets rid of backtick ?? still unknown why*/}
                                             <SyntaxHighlighter
