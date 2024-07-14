@@ -12,11 +12,16 @@ and hopefully some helpful insights into solving some problems you might face wh
 
 
 ## Why am I a blogger?
-1. **System of success**: There is a amazing quote that goes "you don't rise to the level of you goals, you fall to the level of your systems". My understanding of this quote is I shouln't be 
-focusing on achieving the goals I have but instead staying afloat on a path that in time will get me to reaching my goals. A blog will be a part of my system because no doubt writing what you have learned is a learning tool in itself.
+1. **System of success**: There is an amazing quote that goes "you don't rise to the level of you goals, you fall to the level of your systems". My understanding of this quote is I shouln't be 
+focusing on achieving the goals I have but instead staying afloat on a path that in time will get me to reaching my goals. A blog will be a part of my system.
 
-2. **Just working on a project**: 
-3. **Career Opportunities**: JavaScript developers are in high demand.
+2. **Just working on a project**: I'm in college and I want to get better at software developing, outside of internships, working on projects head first is the best method to get better. So I chose a simple project and picked out the technologies I wanted to learn. Those being React-vite, TypeScript, and Tailwind.
+
+3. **Oppurtuntity to show growth**: The vision is my blog will demonstrate where I started and how far I have gone from there. A blog is a great platform to showcase what I have learned overtime and 
+what I am currently achieving. It's also a great way for me to work on my writing abilities.
+
+The reason I had thought of making a blog was because of the advice of a successful entrepenuer, formerly a software engineer. His Name is Yasin Ehsan,
+I think its only fair I give a thank you to the CEO of Headstarter Yasin Ehsan [LinkedIn](https://www.linkedin.com/in/yasinehsan/) because without his advice I wouldn't have made this blog. The story goes
 
 ## Setting Up Your Environment
 
