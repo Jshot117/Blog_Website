@@ -9,7 +9,7 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = ({ title, link, description, date }) => {
     return (
-        <div className="bg-gray-200 m-10 border-4 rounded-lg shadow-lg p-8  max-w-4xl mx-auto min-h-72 flex flex-col justify-between" style={{ width: "70vw" }}>
+        <div className="bg-gray-200 m-10 border-4 rounded-lg shadow-lg p-8  max-w-4xl mx-auto min-h-72 flex flex-col justify-between" style={{ width: "95vw" }}>
             <div className="flex-grow">
                 <h2 className="font-bold text-2xl mb-2">{title}</h2>
                 <h3 className="text-lg mb-4">{date}</h3>
