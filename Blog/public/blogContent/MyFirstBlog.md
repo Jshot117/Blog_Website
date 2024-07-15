@@ -15,27 +15,41 @@ and hopefully some helpful insights into solving some problems you might face wh
 1. **System of success**: There is an amazing quote that goes "you don't rise to the level of you goals, you fall to the level of your systems". My understanding of this quote is I shouln't be 
 focusing on achieving the goals I have but instead staying afloat on a path that in time will get me to reaching my goals. A blog will be a part of my system.
 
-2. **Just working on a project**: I'm in college and I want to get better at software developing, outside of internships, working on projects head first is the best method to get better. So I chose a simple project and picked out the technologies I wanted to learn. Those being React-vite, TypeScript, and Tailwind.
+2. **To work on a project**: I'm in college and I want to get better at software developing, outside of internships, working on projects head first is the best method to get better. So I chose a simple project and picked out the technologies I wanted to learn. Those being React-vite, TypeScript, and [Tailwind](https://tailwindcss.com/docs/installation)
 
-3. **Oppurtuntity to show growth**: The vision is my blog will demonstrate where I started and how far I have gone from there. A blog is a great platform to showcase what I have learned overtime and 
+3. **Opportuntity to show growth**: The vision is my blog will demonstrate where I started and how far I have gone from there. A blog is a great platform to showcase what I have learned overtime and 
 what I am currently achieving. It's also a great way for me to work on my writing abilities.
 
-The reason I had thought of making a blog was because of the advice of a successful entrepenuer, formerly a software engineer. His Name is Yasin Ehsan,
-I think its only fair I give a thank you to the CEO of Headstarter Yasin Ehsan [LinkedIn](https://www.linkedin.com/in/yasinehsan/) because without his advice I wouldn't have made this blog. The story goes
 
-## Setting Up Your Environment
-
-Before you can start coding, you'll need to set up your development environment. Here's a simple step-by-step guide:
-
-1. **Install a Code Editor**: Popular options include [Visual Studio Code](https://code.visualstudio.com/), Sublime Text, and Atom.
-2. **Install Node.js**: This will allow you to run JavaScript on your local machine. Download it from the [official website](https://nodejs.org/).
-3. **Create a Project Folder**: Organize your work by creating a dedicated folder for your projects.
-
-## Your First JavaScript Program
-
-Let's write a simple JavaScript program to get started. Open your code editor and create a new file called `app.js`. Then, type the following code:
-
-```javascript
-console.log('Hello, JavaScript!');
+## My Vision
+I took some time exploring different bloging sites to really get a vision of what I want my blog to look like. My vision was for my website to focus on the writing itself. I didn't want 
+to take away from the writing with random animations or a eye catching UI. That's when I saw the vision for my blog, it was going to be a functionally efficient blog so that when I make a new blog post I dont have to write hundreds of lines of code to publish a new blog page. I created the header to take in properties in so if I want to make a new page with a different title or different links I can.
+The links would be dynamically mapped using this code.
+```html
+{links.map((link, index) => (
+    <li key={index} className="m-0 text-gray-200 text-l hover:scale-110 transform duration-200">
+        <a href={link.url} target="_blank" >
+            {link.name}
+        </a>
+    </li>
+))}
 ```
-![final result](/photos/Example_Result.png)
+Following that pattern, I did the same for the blog descriptions on the home page. Each one of those blog descriptions are mapped onto the home page by giving the properties to a blog card component.
+```html
+{blogs.map((blog, index) => (
+    <BlogCard
+        key={index}
+        title={blog.title}
+        link={blog.link}
+        description={blog.description}
+        date={blog.date}
+    />
+))}
+```
+The main pride in my blog is the dynamic routing of the blog pages. I read about how bloggers biggest issue with managing their website is the lack of ease of use when making a new blog post. Using react I knew there was some way to make this more efficient. My plan ,after iterations of trial and error, boiled down to using markdown files as the blog content and dynamically fetching the markdown files using the url paths. Every blog post will have an id that will be used as the url path and will be used to fetch the markdown file to display the content. The concept is simple but was difficult to find a solution for. What I did was use the [React Markdown](https://github.com/remarkjs/react-markdown) component to to turn my markdown ,that I fetched dynamically, into text. Then I create a nice container for the markdown to display it nicely and that should have been it, but sadly not because then came some problems.
+
+## My problems:
+
+First up I had a conflict with React Markdown and Tailwind. The pretty markdown that I pictured just wasn't there, I at first had no clue what the issue was but then I found out that I can fix it 
+with a neat plugin. The Tailwind Typography plugin, allowed me to fix the lack of styling on my markdown content, specifically using the [prose](https://docs.storefrontui.io/v2/customization/prose).
+This fixed all my problems, well most of my problems. ![]
