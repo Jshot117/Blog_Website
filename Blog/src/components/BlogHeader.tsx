@@ -11,7 +11,7 @@ interface BlogHeaderProps {
 const BlogHeader: React.FC<BlogHeaderProps> = ({ title, links }) => {
     return (
         <header className="bg-gradient-to-b from-black to-transparent flex-col text-center p-2 ">
-            <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div className="container mx-auto flex flex-col md:flex-row justify-between md:items-center">
                 <div className="flex items-center">
                     <img
                         src={logo}
