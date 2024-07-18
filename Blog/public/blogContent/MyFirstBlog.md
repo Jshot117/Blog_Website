@@ -5,7 +5,7 @@
 ### *7/14/2024*
 ## Introduction
 
-Hi, my name is Jonnathan. Get ready to read a most likely mediocre blog post because this is, as you probably read in the title, my first blog post. Moving to the content, my idea with my first blog post is to speak about my experience creating this blog. To keep it organized, I will be dividing it into sections. The first section will speak about why I started a blog. The second section will speak about my plan for the blog and how I accomplished it. The last section will speak about the problems I faced and hopefully provide some helpful insights into solving problems you might face when creating a blog.
+Hi, my name is Jonnathan. I am very excited to write because this is, as you probably read in the title, my first blog post. Moving to the content, my idea with my first blog post is to speak about my experience creating this blog. To keep it organized, I will be dividing it into sections. The first section will speak about why I started a blog. The second section will speak about my plan for the blog and how I accomplished it. The last section will speak about the problems I faced and hopefully provide some helpful insights into solving problems you might face when creating a blog.
 
 ## Why am I a blogger?
 1. **System of success**: There is an amazing quote that goes, "you don't rise to the level of your goals, you fall to the level of your systems." My understanding of this quote is that I shouldn't be focusing on achieving the goals I have but instead staying afloat on a path that in time will get me to reach my goals. A blog will be a part of my system.
