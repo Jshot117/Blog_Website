@@ -28,6 +28,7 @@ app.post('/api/subscribe', async (req, res) => {
     const { email } = req.body;
     const result = await pool.query(
         "Insert into mailing_list (email) values($1) returning *",
+        [email]
     );
     res.status(200).json("successfully subscribed");
     }
