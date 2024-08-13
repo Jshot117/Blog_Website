@@ -2,7 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
-import { Pool } from 'pg';
+import pkg from 'pg';
+
+const{ Pool } = pkg;
 
 dotenv.config();
 
@@ -25,14 +27,16 @@ app.post('/api/subscribe', async (req, res) => {
     try {
     const { email } = req.body;
     const result = await pool.query(
-        "Insert into mailing_list(email) values($1) returning *",
-        [email],
+        // "Insert into mailing_list (email) values($1) returning *",
+        // "Select * from mailing_list",
+        "SELECT table_name FROM information_schema.tables WHERE table_schema='public'"
+        // [email],
     );
-    res.statusCode(200).json("successfully subscribed");
+    res.status(200).json("successfully subscribed");
     }
-    catch {
-        res.statusCode(500).json("error");
-        console.log("error");
+    catch (error) {
+        res.status(500).json("error");
+        console.log(error);
     }
 });
 
