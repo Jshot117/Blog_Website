@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
+import { Pool } from 'pg';
 
 dotenv.config();
 
@@ -11,12 +12,28 @@ const port = process.env.port || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
+const pool = new Pool({
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_DATABASE,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT
+});
 
 //I need to get the email from my front end, so figure out syntax
-app.post('/api/subscribe', (req, res) => {
+app.post('/api/subscribe', async (req, res) => {
+    try {
     const { email } = req.body;
-    console.log(email);
-    res.json({message: "subscribed successsfully"})
+    const result = await pool.query(
+        "Insert into mailing_list(email) values($1) returning *",
+        [email],
+    );
+    res.statusCode(200).json("successfully subscribed");
+    }
+    catch {
+        res.statusCode(500).json("error");
+        console.log("error");
+    }
 });
 
 app.listen(port, () => {
