@@ -7,7 +7,7 @@ const HomePage: React.FC = () => {
     {
         title: "My First Blog Post",
         link: { name: "Read More", url: "/MyFirstBlog" },
-        description: "Hi, my name is Jonnathan. Get ready to read a most likely mediocre blog post because this is, as you probably read in the title, my first blog post. Moving to the content, my idea with my first blog post is to speak about my experience creating this blog. To keep it organized, I will be dividing it into sections. The first section will speak about why I started a blog. The second section will speak about my plan for the blog and how I accomplished it. The last section will speak about the problems I faced and hopefully provide some helpful insights into solving problems you might face when creating a blog.",
+        description: "Hi, my name is Jonnathan. I am very excited to write because this is, as you probably read in the title, my first blog post. Moving to the content, my idea with my first blog post is to speak about my experience creating this blog. To keep it organized, I will be dividing it into sections. The first section will speak about why I started a blog. The second section will speak about my plan for the blog and how I accomplished it. The last section will speak about the problems I faced and hopefully provide some helpful insights into solving problems you might face when creating a blog.",
         date: "7/14/2024"
     },
     ]
