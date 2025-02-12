@@ -38,6 +38,21 @@ app.post('/api/subscribe', async (req, res) => {
     }
 });
 
+
+app.post("/api/search", async (req, res) => {
+    //receive search params
+    const userSearch = req.body.search
+    const params = new URLSearchParams()
+    params.append('query', userSearch)
+    params.append('client_id', process.env.CLIENT_ID)
+    console.log("A")
+    console.log(params)
+    const dataFetch = await fetch(`https://api.unsplash.com/search/photos/?${params}`)
+    const photos = (await dataFetch.json()).results
+    res.json(photos)
+
+})
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
