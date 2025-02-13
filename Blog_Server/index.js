@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import pkg from 'pg';
 
-const{ Pool } = pkg;
+const { Pool } = pkg;
 
 dotenv.config();
 
@@ -15,26 +15,39 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const pool = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_DATABASE,
-    password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
 //I need to get the email from my front end, so figure out syntax
 app.post('/api/subscribe', async (req, res) => {
     try {
-    const { email } = req.body;
-    const result = await pool.query(
-        "Insert into mailing_list (email) values($1) returning *",
-        [email]
-    );
-    res.status(200).json("successfully subscribed");
+        const { email } = req.body;
+        if (!req.body.email) {
+            return res.status(400).json({ error: "Email is required" });
+        }
+        console.log('Received email:', email);
+
+        
+        const result = await pool.query(
+            "Insert into mailing_list (email) values($1) returning *",
+            [email]
+        );
+        res.status(200).json("successfully subscribed");
     }
     catch (error) {
-        res.status(500).json("error");
-        console.log(error);
+        console.error('Database error:', error);
+        
+        if (error.code === '23505') { 
+            return res.status(409).json({ error: "Email already exists" });
+        }
+        
+        res.status(500).json({ 
+            error: "Server error", 
+            details: process.env.NODE_ENV === 'development' ? error.message : undefined 
+        });
     }
 });
 
