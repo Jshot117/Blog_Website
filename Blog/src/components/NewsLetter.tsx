@@ -24,7 +24,13 @@ const NewsLetter = () => {
                 body: JSON.stringify({ email })
                 });
             if(!response.ok){
-                throw new Error("An error occured. Please try again later");
+                if (response.status === 409){
+                    setError("Already entered email")
+                }
+                else{
+                    throw new Error("An error occured. Please try again later");
+                }
+                
             }  
             console.log(email);
             setEmail("");
