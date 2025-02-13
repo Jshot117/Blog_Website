@@ -4,12 +4,18 @@ import BlogHeader from '../components/BlogHeader'
 
 const HomePage: React.FC = () => {
     const blogs = [
-    {
-        title: "My First Blog Post",
-        link: { name: "Read More", url: "/MyFirstBlog" },
-        description: "Hi, my name is Jonnathan. I am very excited to write because this is, as you probably read in the title, my first blog post. Moving to the content, my idea with my first blog post is to speak about my experience creating this blog. To keep it organized, I will be dividing it into sections. The first section will speak about why I started a blog. The second section will speak about my plan for the blog and how I accomplished it. The last section will speak about the problems I faced and hopefully provide some helpful insights into solving problems you might face when creating a blog.",
-        date: "7/14/2024"
-    },
+        {
+            title: "How I got Capital One",
+            link: { name: "Read More", url: "/How I got Capital One" },
+            description: "I want to write about what I did to get myself in this fortunate position ( The position being, landing a internship at Capital One for Software Engineering ). This blog post will be especially interesting for those who are looking for a Software engineering internship and are currently in a position of wanting to make themselves a competitive candidate for these roles.",
+            date: "2/12/2025"
+        },
+        {
+            title: "My First Blog Post",
+            link: { name: "Read More", url: "/MyFirstBlog" },
+            description: "Hi, my name is Jonnathan. I am very excited to write because this is, as you probably read in the title, my first blog post. Moving to the content, my idea with my first blog post is to speak about my experience creating this blog. To keep it organized, I will be dividing it into sections. The first section will speak about why I started a blog. The second section will speak about my plan for the blog and how I accomplished it. The last section will speak about the problems I faced and hopefully provide some helpful insights into solving problems you might face when creating a blog.",
+            date: "7/14/2024"
+        },
     ]
 
     return (
