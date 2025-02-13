@@ -22,31 +22,30 @@ const NewsLetter = () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ email })
-                });
-            if(!response.ok){
-                if (response.status == 409){
+            });
+            if (!response.ok) {
+                if (response.status == 409) {
                     setError("Already entered email")
                 }
-                else{
+                else {
                     throw new Error("An error occured. Please try again later");
+                    console.log(email);
+                    setEmail("");
+                    setError("");
                 }
-                
-            }  
-            console.log(email);
-            setEmail("");
-            setError("");
+            }
         }
         catch (error) {
-            if (error === 409){
+            if (error === 409) {
                 setError("Already entered email")
             }
-            else{
+            else {
                 setError("An error occured. Please try again later");
             }
             console.log(error);
             return;
         }
-      
+
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
