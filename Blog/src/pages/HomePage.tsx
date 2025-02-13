@@ -6,7 +6,7 @@ const HomePage: React.FC = () => {
     const blogs = [
         {
             title: "How I got Capital One",
-            link: { name: "Read More", url: "/How I got Capital One" },
+            link: { name: "Read More", url: "/HowIgotCapitalOne" },
             description: "I want to write about what I did to get myself in this fortunate position ( The position being, landing a internship at Capital One for Software Engineering ). This blog post will be especially interesting for those who are looking for a Software engineering internship and are currently in a position of wanting to make themselves a competitive candidate for these roles.",
             date: "2/12/2025"
         },
