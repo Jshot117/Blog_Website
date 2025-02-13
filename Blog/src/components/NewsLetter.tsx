@@ -16,7 +16,7 @@ const NewsLetter = () => {
             return;
         }
         try {
-            const response = await fetch(`${process.env.port}/api/subscribe`, {
+            const response = await fetch(`https://blog-website-backend-srx5.onrender.com/api/subscribe`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
