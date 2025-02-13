@@ -28,7 +28,7 @@ const NewsLetter = () => {
                     setError("Already entered email")
                 }
                 else {
-                    throw new Error("An error occured. Please try again later");
+                    throw new Error("An error occurred. Please try again later");
                     console.log(email);
                     setEmail("");
                     setError("");
@@ -40,7 +40,7 @@ const NewsLetter = () => {
                 setError("Already entered email")
             }
             else {
-                setError("An error occured. Please try again later");
+                setError("An error occurred. Please try again later");
             }
             console.log(error);
             return;
