@@ -38,7 +38,8 @@ const HomePage: React.FC = () => {
                     ))}
                 </div>
                 <NewsLetter />
-                <div className='text-white'>I don't chatgpt</div>
+                <div className='fixed bottom-0 left-0 w-full p-4'>
+                    <h1 className="text-white">I don't chatgpt</h1></div>
             </div>
         </>
     )
