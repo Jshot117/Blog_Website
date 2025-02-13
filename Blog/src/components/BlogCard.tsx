@@ -16,7 +16,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ title, link, description, date }) =
                 <p className="text-gray-700">{description}</p>
             </div>
             <div className="text-blue-900 mt-4">
-                <a href={link.url} className="hover:underline text-lg">{link.name}</a>
+                <a href={link.url} className="hover:underline hover:grow text-2xl ">{link.name}</a>
             </div>
         </div>
     );
