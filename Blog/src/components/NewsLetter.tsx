@@ -24,7 +24,7 @@ const NewsLetter = () => {
                 body: JSON.stringify({ email })
                 });
             if(!response.ok){
-                if (response.status === 409){
+                if (response.status == 409){
                     setError("Already entered email")
                 }
                 else{
