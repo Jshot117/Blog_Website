@@ -31,8 +31,13 @@ const NewsLetter = () => {
             setError("");
         }
         catch (error) {
+            if (error === 409){
+                setError("Already entered email")
+            }
+            else{
+                setError("An error occured. Please try again later");
+            }
             console.log(error);
-            setError("An error occured. Please try again later");
             return;
         }
       
