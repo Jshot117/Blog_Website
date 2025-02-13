@@ -30,7 +30,7 @@ app.post('/api/subscribe', async (req, res) => {
         }
         console.log('Received email:', email);
 
-        
+
         const result = await pool.query(
             "Insert into mailing_list (email) values($1) returning *",
             [email]
@@ -39,14 +39,14 @@ app.post('/api/subscribe', async (req, res) => {
     }
     catch (error) {
         console.error('Database error:', error);
-        
-        if (error.code === '23505') { 
+
+        if (error.code === '23505') {
             return res.status(409).json({ error: "Email already exists" });
         }
-        
-        res.status(500).json({ 
-            error: "Server error", 
-            details: process.env.NODE_ENV === 'development' ? error.message : undefined 
+
+        res.status(500).json({
+            error: "Server error",
+            details: process.env.NODE_ENV === 'development' ? error.message : undefined
         });
     }
 });
