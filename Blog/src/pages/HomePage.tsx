@@ -1,6 +1,8 @@
 import React from 'react'
 import BlogCard from '../components/BlogCard'
 import BlogHeader from '../components/BlogHeader'
+import NewsLetter from '../components/NewsLetter';
+
 
 const HomePage: React.FC = () => {
     const blogs = [
@@ -35,6 +37,7 @@ const HomePage: React.FC = () => {
                         />
                     ))}
                 </div>
+                <NewsLetter />
             </div>
         </>
     )
